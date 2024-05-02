@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  cpu-service:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    command: sh -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+
+  cpu-daemon:
+    build:
+      context: ./daemon
+      dockerfile: Dockerfile
+    command: sh -c "python cpu_load.py --host http://cpu-service --port 8000"
+    depends_on:
+      - cpu-service
