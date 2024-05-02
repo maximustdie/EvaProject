@@ -6,7 +6,7 @@ import sys
 import requests
 
 import psutil
-from requests.exceptions import InvalidSchema, RequestException
+from requests.exceptions import RequestException
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--host', type=str, default="http://127.0.0.1")
