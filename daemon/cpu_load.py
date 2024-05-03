@@ -17,7 +17,7 @@ args = parser.parse_args()
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-URL = f"{args.host}:{args.port}/cpu/load"
+URL = f"{args.host}:{args.port}/cpu/load/"
 HEADERS = {
     'Content-Type': 'application/json'
 }
