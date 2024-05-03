@@ -1,6 +1,6 @@
 # EvaProjectTest
 
-Запуск через docker:
+Запуск через docker из корня:
 ```
 docker compose up
 ```
